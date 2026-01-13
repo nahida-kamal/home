@@ -1,0 +1,227 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: lightblue;
+    text-align: center;
+    transition: 0.5s; /* Isse rang dheere-dheere badlega (Style!) */
+}
+
+
+
+
+h1 {
+    color: navy;
+    font-family: sans-serif;
+}
+    
+    img {
+    width: 200px;       /* Sabhi photos ki chaudai barabar */
+    height: 200px;      /* Lambai bhi barabar (Square box) */
+    object-fit: cover;  /* Photo ko adjust karega taaki wo kate nahi */
+    
+    border: 5px solid white;  /* Safed rang ka frame */
+    border-radius: 50%;       /* 50% karne se photo bilkul GOL (Circle) ho jayegi */
+    
+    box-shadow: 0px 5px 15px gray; /* Thodi si shadow (3D look) */
+    
+    margin: 10px;       /* Photos ke beech mein thodi jagah */
+}
+
+
+.contact-btn {
+    background-color: white;
+    color: navy;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid navy;
+}
+
+.contact-btn:hover {
+    background-color: navy;
+    color: white;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    color: navy;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+/* --- DARK MODE DESIGN --- */
+.dark-theme {
+    background-color: black;  /* Favorite Color */
+    color: white;
+}
+
+.dark-theme h1, .dark-theme h2, .dark-theme h3 {
+    color: cyan;
+}
+/* 1. Papa Box: Isko "Relative" bolenge taaki icon iske hisaab se chale */
+.password-wrapper {
+    position: relative;
+    display: inline-block; /* Taaki box utna hi bada ho jitna input hai */
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;        /* Right side se thoda door */
+    
+    /* Ye 2 lines icon ko bilkul CENTER mein layengi */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    cursor: pointer;    /* Mouse pointer banega */
+    font-size: 18px;    /* Icon ka size thoda adjust kiya */
+    line-height: 0;     /* Extra spacing hatane ke liye */
+}
+
+/* Input box mein thodi jagah banate hain taaki text icon ke neeche na aaye */
+input[type="password"], input[type="text"] {
+    padding-right: 40px; 
+}
+/* Email wale dibbe ke neeche jagah (Gap) */
+.input-group {
+    margin-bottom: 20px; /* 20px ka gap */
+}
+
+/* 1. Poori Table ki setting */
+table {
+    width: 80%;               /* Screen ka 80% hissa lega */
+    margin: auto;             /* Table ko page ke BEECH (Center) mein layega */
+    border-collapse: collapse; /* Double lines ko jodkar EK kar dega (Zaroori!) */
+    background-color: white;  /* Table ka background safed */
+}
+
+/* 2. Headings (Sabse upar wali line) */
+th {
+    background-color: navy;   /* Heading ka background neela */
+    color: white;             /* Text safed */
+    padding: 15px;            /* Thodi jagah (breathing room) */
+    border: 2px solid navy;   /* Border ka rang */
+}
+
+/* 3. Data Cells (Baaki ke dabbe) */
+td {
+    padding: 12px;            /* Text chipka na rahe */
+    border: 1px solid navy;   /* Patli border */
+    text-align: center;       /* Text beech mein likha aaye */
+    color: black;
+}
+
+/* 1. Menu Bar ki patti */
+.navbar {
+    background-color: #333; /* Dark Grey background */
+    overflow: hidden;       /* Extra cheezein chupane ke liye */
+    position: sticky;       /* (Optional) Scroll karne par bhi upar chipka rahe */
+    top: 0;
+}
+
+/* 2. Menu ke Links (Home, About...) */
+.navbar a {
+    float: left;            /* Sabko ek line mein laane ke liye */
+    display: block;
+    color: white;           /* Text ka rang Safed */
+    text-align: center;
+    padding: 14px 20px;     /* Thodi motai aur chauraai */
+    text-decoration: none;  /* Neeche ki line (underline) hatane ke liye */
+    font-size: 18px;
+}
+
+/* 3. Jab mouse upar le jayein (Hover Effect) */
+.navbar a:hover {
+    background-color: #d01029; /* Light Grey background */
+    color: black;           /* Text Black ho jayega */
+}
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #222;
+}
+/* Footer Design */
+.footer {
+    background-color: black;    /* Kaala background */
+    color: white;               /* Safed text */
+    text-align: center;         /* Sab kuch beech mein */
+    padding: 40px;              /* Thodi badi jagah */
+    margin-top: 50px;           /* Upar wale content se doori */
+}
+
+/* Footer ke Links (Insta, LinkedIn...) */
+.footer a {
+    color: cyan;                /* Links ka rang */
+    text-decoration: none;      /* Line hatayi */
+    margin: 0 15px;             /* Beech mein gap */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Jab mouse link par le jayein */
+.footer a:hover {
+    color: yellow;              /* Rang badal jaye */
+}
+/* --- Mobile Phone ke liye Settings --- */
+@media screen and (max-width: 600px) {
+    
+    /* Menu bar ko adjust karte hain */
+    .navbar a {
+        float: none;       /* Line tod do */
+        display: block;    /* Har link apni alag line lega */
+        text-align: left;  /* Text left side mein aayega */
+    }
+
+    /* Table ko bhi scroll karne layak banate hain */
+    table {
+        width: 100%;       /* Phone par poori jagah lega */
+    }
+}
+/* --- DARK MODE DESIGN --- */
+.dark-theme {
+    background-color: black;  /* Favorite Color */
+    color: white;             /* Text safed ho jayega */
+}
+
+/* Dark mode mein headings ka rang alag rakhte hain taaki wo chamkein */
+.dark-theme h1, .dark-theme h2, .dark-theme h3 {
+    color: #48c862;
+}
+
+/* --- Contact Form Styling --- */
+.contact-section {
+    width: 60%;
+    margin: 50px auto;        /* Upar-neeche gap aur beech mein center */
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #ddd;   /* Halka sa border poore form ke aas-paas */
+    border-radius: 10px;      /* Kone gol karne ke liye */
+}
+
+.input-box {
+    width: 80%;               /* Input box ki chaudai */
+    padding: 12px;            /* Andar thodi jagah */
+    margin: 10px 0;           /* Thoda gap upar-neeche */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Dark Mode ke liye Input ka rang */
+.dark-theme .input-box {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+}
