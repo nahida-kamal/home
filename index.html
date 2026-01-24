@@ -1,158 +1,116 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Nahida's First Website</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-<div class="navbar">
-    <a href="#home">Home 🏠</a>
-    <a href="#gallery">Gallery 🖼️</a>
-    <a href="#skills">Skills 📊</a>
-    <a href="#contact">Contact 📞</a>
-    
-    <button onclick="toggleTheme()" style="float: right; margin: 10px;">🌓 Mode</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | CS Graduate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-</div>
+    <nav>
+        <div class="logo">&lt;DevProfile /&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    
-        
-        <h1 id="home">Welcome to My world</h1>
-        
-
-        <h3>My Favorite Photo:</h3>
-        <img src="https://picsum.photos/400/300" alt="Random Nature Photo" width="400">   
-<img src="https://i.pinimg.com/236x/7a/23/b1/7a23b17de2db58d12f3561351c793e05.jpg" alt="Cute Cat" width="200">
-<img src="https://i.ytimg.com/vi/feEMKVcFyC4/maxresdefault.jpg" width="540">
-<img src="https://www.animaker.com/hub/wp-content/uploads/2023/03/Mickey_Mouse_Disney_1.webp"width="190"
-
-
-
-<hr> <h3>My Photo Gallery 📸</h3
-    
-    <a href="https://www.youtube.com" target="_blank">
-    
-    <img src="https://picsum.photos/200/300" alt="My Photo">
-
-</a> 
-<img src="https://picsum.photos/200/301" width="200">
-
-<img src="https://picsum.photos/200/302" width="200">
-<img src="https://www.animaker.com/hub/wp-content/uploads/2023/03/Mickey_Mouse_Disney_1.webp"width="190"
-
-<hr>
-
-<h3 id="contact">Contact Me 📞</h3>
-
-<input type="text" placeholder="Name">
-<br><br>
-
-<input type="text" placeholder="email id">
-<br><br>
-
-
-
-<div class="password-wrapper">
-    <input type="password" id="myPass" placeholder="Password">
-    <span onclick="togglePassword()" class="eye-icon"> 👁️ </span>
-</div>
-<br><br>
-
-
-
-        <br><br> <h3>Useful Links:</h3>
-
-        <br><br>
-        
-        <button onclick="changeMode()">🌙 Dark Mode</button>
-
-        <script src="script.js"></script>
-
-<button onclick="sendMessage()">Send Data 🚀</button>
-
-<button id="myBtn" onclick="changeText()">Submit</button>
-
-<h3>Select Gender :</h3>
-<input type="radio" name="gender" value="Male"> Male
-<input type="radio" name="gender" value="Female"> Female
-
-<br><br>
-
-<textarea placeholder="Write your full message here..." rows="5" cols="30"></textarea>
-<br><br>
-
-<h3>Hobbies:</h3>
-<input type="checkbox" name="hobby" value="Music"> Music
-<input type="checkbox" name="hobby" value="Coding"> Coding
-<input type="checkbox" name="hobby" value="Travel"> Travel
-<br><br>
-<div class="dark-box">  
-</div> 
-<h3>City:</h3>
-<select name="city">
-    <option value="delhi">Delhi</option>
-    <option value="mumbai">Mumbai</option>
-    <option value="kolkata">Kolkata</option>
-    <option value="other">Other</option>
-</select>
-<br><br>
-
-
-<h3 id="skills">My Skills Table 📊</h3>
-
-<table border="1"> <tr>
-        <th>Skill Name</th>
-        <th>Level</th>
-    </tr>
-
-    <tr>
-        <td>HTML</td>
-        <td>Expert 😎</td>
-    </tr>
-
-    <tr>
-        <td>CSS</td>
-        <td>Intermediate 🎨</td>
-    </tr>
-
-    <tr>
-        <td>JavaScript</td>
-        <td>Beginner 🧠</td>
-    </tr>
-
-</table>
-<br><br>
-
-<div class="contact-section">
-        <h3>Send me a Message ✍️</h3>
-        
-        <form>
-            <input type="text" placeholder="Your Name" class="input-box" required>
-            <br><br>
-
-            <textarea placeholder="Write your message here..." rows="4" class="input-box"></textarea>
-            <br><br>
-
-            <button type="button" class="contact-btn" onclick="sendMessage()">Send Message 🚀</button>
-        </form>
-    </div>
-
-<div class="footer">
-        
-        <h3>Let's Connect! 🤝</h3>
-        
-        <div class="socials">
-            <a href="#">Instagram 📸</a>
-            <a href="#">LinkedIn 💼</a>
-            <a href="#">Email 📧</a>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm <span class="highlight">Nadia Kamal</span></h1>
+            <h2 id="typewriter"></h2>
+            <p>Building efficient solutions for complex problems.</p>
+            <a href="#projects" class="btn">View My Work</a>
         </div>
+    </header>
 
-        <br>
-        <p>Made with ❤️ by Me | &copy; 2025 All Rights Reserved.</p>
-    
-    </div>
+    <section id="about" class="container">
+        <h3>01. About Me</h3>
+        <p>I am a recent Computer Science graduate passionate about software engineering and algorithms. I love turning clean code into user-friendly solutions. When I'm not coding, I'm exploring new technologies or contributing to open source.</p>
+    </section>
 
+    <section id="skills" class="container">
+        <h3>02. Technical Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>Languages</h4>
+                <p>Python, Java, C++, JavaScript, SQL</p>
+            </div>
+            <div class="skill-card">
+                <h4>Frontend</h4>
+                <p>HTML5, CSS3, React.js</p>
+            </div>
+            <div class="skill-card">
+                <h4>Tools & DevOps</h4>
+                <p>Git, Docker, Linux, AWS, Jenkins</p>
+            </div>
+        </div>
+    </section>
 
+    <section id="projects" class="container">
+        <h3>03. Projects</h3>
+        <div class="project-grid">
+            <div class="project-card">
+                <h4>Algorithm Visualizer</h4>
+                <p>A web app that visualizes sorting algorithms in real-time. Built to demonstrate understanding of DSA concepts.</p>
+                <div class="tags">
+                    <span>JavaScript</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank">View Live</a>
+                    <a href="#" target="_blank">View Code</a>
+                </div>
+            </div>
 
-    </body>
+            <div class="project-card">
+                <h4>E-Commerce API</h4>
+                <p>A RESTful API built for a mock e-commerce platform handling authentication and payments.</p>
+                <div class="tags">
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>JWT</span>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank">View Live</a>
+                    <a href="#" target="_blank">View Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h4>Task Manager CLI</h4>
+                <p>A command-line interface tool to manage daily tasks and productivity metrics locally.</p>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>SQLite</span>
+                </div>
+                <div class="links">
+                    <a href="#" target="_blank">View Live</a>
+                    <a href="#" target="_blank">View Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h3>04. Contact</h3>
+        <p>Currently looking for new opportunities. My inbox is always open.</p>
+        <a href="mailto:your.email@example.com" class="btn">Say Hello</a>
+        
+        <footer class="footer">
+            <p>Designed & Built by Nahida Kamal</p>
+            <div class="socials">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+            </div>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+</body>
 </html>

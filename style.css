@@ -1,227 +1,181 @@
-html {
-    scroll-behavior: smooth;
+:root {
+    --bg-color: #0a192f;
+    --text-color: #8892b0;
+    --heading-color: #ccd6f6;
+    --accent-color: #64ffda;
+    --card-bg: #112240;
+    --font-main: 'Inter', sans-serif;
+    --font-code: 'Fira Code', monospace;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: lightblue;
-    text-align: center;
-    transition: 0.5s; /* Isse rang dheere-dheere badlega (Style!) */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
 }
 
-
-
-
-h1 {
-    color: rgb(128, 0, 96);
-    font-family: sans-serif;
-}
-    
-    img {
-    width: 200px;       /* Sabhi photos ki chaudai barabar */
-    height: 200px;      /* Lambai bhi barabar (Square box) */
-    object-fit: cover;  /* Photo ko adjust karega taaki wo kate nahi */
-    
-    border: 5px solid white;  /* Safed rang ka frame */
-    border-radius: 50%;       /* 50% karne se photo bilkul GOL (Circle) ho jayegi */
-    
-    box-shadow: 0px 5px 15px gray; /* Thodi si shadow (3D look) */
-    
-    margin: 10px;       /* Photos ke beech mein thodi jagah */
+/* Typography & Layout */
+h1, h2, h3, h4 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
 }
 
+h3 {
+    font-family: var(--font-code);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
 
-.contact-btn {
-    background-color: white;
-    color: navy;
-    padding: 10px 20px;
+a {
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 2px solid navy;
+    color: var(--accent-color);
+    transition: 0.3s;
 }
 
-.contact-btn:hover {
-    background-color: navy;
-    color: white;
-    cursor: pointer;
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+    font-family: var(--font-code);
 }
 
-li {
-    background-color: white;
-    color: navy;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--heading-color);
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 0 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+.hero p {
+    max-width: 500px;
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.btn {
     display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 15px;
-    font-weight: bold;
+    padding: 12px 24px;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 4px;
+    font-family: var(--font-code);
+    margin-top: 20px;
 }
 
-/* --- DARK MODE DESIGN --- */
-.dark-theme {
-    background-color: black;  /* Favorite Color */
-    color: white;
+.btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
 }
 
-.dark-theme h1, .dark-theme h2, .dark-theme h3 {
-    color: cyan;
-}
-/* 1. Papa Box: Isko "Relative" bolenge taaki icon iske hisaab se chale */
-.password-wrapper {
-    position: relative;
-    display: inline-block; /* Taaki box utna hi bada ho jitna input hai */
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.eye-icon {
-    position: absolute;
-    right: 10px;        /* Right side se thoda door */
-    
-    /* Ye 2 lines icon ko bilkul CENTER mein layengi */
-    top: 50%;
-    transform: translateY(-50%);
-    
-    cursor: pointer;    /* Mouse pointer banega */
-    font-size: 18px;    /* Icon ka size thoda adjust kiya */
-    line-height: 0;     /* Extra spacing hatane ke liye */
-}
-
-/* Input box mein thodi jagah banate hain taaki text icon ke neeche na aaye */
-input[type="password"], input[type="text"] {
-    padding-right: 40px; 
-}
-/* Email wale dibbe ke neeche jagah (Gap) */
-.input-group {
-    margin-bottom: 20px; /* 20px ka gap */
-}
-
-/* 1. Poori Table ki setting */
-table {
-    width: 80%;               /* Screen ka 80% hissa lega */
-    margin: auto;             /* Table ko page ke BEECH (Center) mein layega */
-    border-collapse: collapse; /* Double lines ko jodkar EK kar dega (Zaroori!) */
-    background-color: white;  /* Table ka background safed */
-}
-
-/* 2. Headings (Sabse upar wali line) */
-th {
-    background-color: navy;   /* Heading ka background neela */
-    color: white;             /* Text safed */
-    padding: 15px;            /* Thodi jagah (breathing room) */
-    border: 2px solid navy;   /* Border ka rang */
-}
-
-/* 3. Data Cells (Baaki ke dabbe) */
-td {
-    padding: 12px;            /* Text chipka na rahe */
-    border: 1px solid navy;   /* Patli border */
-    text-align: center;       /* Text beech mein likha aaye */
-    color: black;
-}
-
-/* 1. Menu Bar ki patti */
-.navbar {
-    background-color: #333; /* Dark Grey background */
-    overflow: hidden;       /* Extra cheezein chupane ke liye */
-    position: sticky;       /* (Optional) Scroll karne par bhi upar chipka rahe */
-    top: 0;
-}
-
-/* 2. Menu ke Links (Home, About...) */
-.navbar a {
-    float: left;            /* Sabko ek line mein laane ke liye */
-    display: block;
-    color: white;           /* Text ka rang Safed */
-    text-align: center;
-    padding: 14px 20px;     /* Thodi motai aur chauraai */
-    text-decoration: none;  /* Neeche ki line (underline) hatane ke liye */
-    font-size: 18px;
-}
-
-/* 3. Jab mouse upar le jayein (Hover Effect) */
-.navbar a:hover {
-    background-color: #d01029; /* Light Grey background */
-    color: black;           /* Text Black ho jayega */
-}
-h1 {
-    text-align: center;
-    margin-top: 30px;
-    color: #222;
-}
-/* Footer Design */
-.footer {
-    background-color: black;    /* Kaala background */
-    color: white;               /* Safed text */
-    text-align: center;         /* Sab kuch beech mein */
-    padding: 40px;              /* Thodi badi jagah */
-    margin-top: 50px;           /* Upar wale content se doori */
-}
-
-/* Footer ke Links (Insta, LinkedIn...) */
-.footer a {
-    color: cyan;                /* Links ka rang */
-    text-decoration: none;      /* Line hatayi */
-    margin: 0 15px;             /* Beech mein gap */
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Jab mouse link par le jayein */
-.footer a:hover {
-    color: yellow;              /* Rang badal jaye */
-}
-/* --- Mobile Phone ke liye Settings --- */
-@media screen and (max-width: 600px) {
-    
-    /* Menu bar ko adjust karte hain */
-    .navbar a {
-        float: none;       /* Line tod do */
-        display: block;    /* Har link apni alag line lega */
-        text-align: left;  /* Text left side mein aayega */
-    }
-
-    /* Table ko bhi scroll karne layak banate hain */
-    table {
-        width: 100%;       /* Phone par poori jagah lega */
-    }
-}
-/* --- DARK MODE DESIGN --- */
-.dark-theme {
-    background-color: black;  /* Favorite Color */
-    color: white;             /* Text safed ho jayega */
-}
-
-/* Dark mode mein headings ka rang alag rakhte hain taaki wo chamkein */
-.dark-theme h1, .dark-theme h2, .dark-theme h3 {
-    color: #48c862;
-}
-
-/* --- Contact Form Styling --- */
-.contact-section {
-    width: 60%;
-    margin: 50px auto;        /* Upar-neeche gap aur beech mein center */
+.skill-card {
+    background-color: var(--card-bg);
     padding: 20px;
-    text-align: center;
-    border: 2px solid #ddd;   /* Halka sa border poore form ke aas-paas */
-    border-radius: 10px;      /* Kone gol karne ke liye */
+    border-radius: 4px;
+    font-family: var(--font-code);
 }
 
-.input-box {
-    width: 80%;               /* Input box ki chaudai */
-    padding: 12px;            /* Andar thodi jagah */
-    margin: 10px 0;           /* Thoda gap upar-neeche */
-    border: 1px solid #ccc;
+/* Projects Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 25px;
     border-radius: 5px;
-    font-size: 16px;
+    transition: transform 0.2s;
 }
 
-/* Dark Mode ke liye Input ka rang */
-.dark-theme .input-box {
-    background-color: #333;
-    color: white;
-    border: 1px solid white;
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.tags span {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    margin-right: 15px;
+    color: var(--text-color);
+}
+
+.links {
+    margin-top: 20px;
+    font-family: var(--font-code);
+    font-size: 0.9rem;
+}
+
+.links a {
+    margin-right: 20px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+}
+
+.socials {
+    margin-top: 10px;
+}
+
+.socials a {
+    margin: 0 10px;
+    color: var(--text-color);
+}
+
+.socials a:hover {
+    color: var(--accent-color);
 }
