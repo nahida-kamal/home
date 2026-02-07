@@ -1,24 +1,24 @@
-const textElement = document.getElementById('typewriter');
-const texts = ['Computer Science Graduate', 'Software Engineer', 'Full Stack Developer'];
-let count = 0;
-let index = 0;
-let currentText = '';
-let letter = '';
+document.addEventListener('DOMContentLoaded', () => {
 
-(function type() {
-    if (count === texts.length) {
-        count = 0;
-    }
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
-    
-    textElement.textContent = letter;
-    
-    if (letter.length === currentText.length) {
-        count++;
-        index = 0;
-        setTimeout(type, 2000); // Wait 2 seconds before typing next phrase
-    } else {
-        setTimeout(type, 100);
-    }
-}());
+    // Intersection Observer for Scroll Animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    const scrollElements = document.querySelectorAll('.scroll-reveal');
+    scrollElements.forEach(el => observer.observe(el));
+
+    // Optional: Typewriter logic can be added here if we decide to keep it
+    // For now, the new design uses a static but elegant hero section.
+});
