@@ -5,50 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nahida Kamal | Software Engineer</title>
+    <meta name="description"
+        content="Nahida Kamal — Software Engineer specializing in building exceptional digital experiences on the web.">
     <link rel="stylesheet" href="style.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
 
-    <!-- Background Elements -->
-    <div class="fixed-bg">
-        <div class="gradient-blob blob-1"></div>
-        <div class="gradient-blob blob-2"></div>
+    <!-- Cursor Glow Follower -->
+    <div id="cursor-glow"></div>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Fixed Left Social Sidebar -->
+    <div class="sidebar sidebar-left">
+        <ul class="sidebar-links">
+            <li><a href="https://github.com" target="_blank" aria-label="GitHub"><i data-feather="github"></i></a></li>
+            <li><a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+            </li>
+            <li><a href="https://twitter.com" target="_blank" aria-label="Twitter"><i data-feather="twitter"></i></a>
+            </li>
+            <li><a href="https://instagram.com" target="_blank" aria-label="Instagram"><i
+                        data-feather="instagram"></i></a></li>
+        </ul>
+        <div class="sidebar-line"></div>
     </div>
 
-    <nav class="glass-nav">
-        <div class="logo">&lt;NK /&gt;</div>
-        <ul class="nav-links">
-            <li><a href="#about"><span class="nav-number">01.</span> About</a></li>
-            <li><a href="#skills"><span class="nav-number">02.</span> Skills</a></li>
-            <li><a href="#projects"><span class="nav-number">03.</span> Projects</a></li>
-            <li><a href="#contact"><span class="nav-number">04.</span> Contact</a></li>
+    <!-- Fixed Right Email Sidebar -->
+    <div class="sidebar sidebar-right">
+        <a href="mailto:nahida.kamal@example.com" class="sidebar-email">nahida.kamal@example.com</a>
+        <div class="sidebar-line"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="glass-nav">
+        <a href="#" class="logo">&lt;NK /&gt;</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about" class="nav-link"><span class="nav-number">01.</span> About</a></li>
+            <li><a href="#skills" class="nav-link"><span class="nav-number">02.</span> Skills</a></li>
+            <li><a href="#projects" class="nav-link"><span class="nav-number">03.</span> Projects</a></li>
+            <li><a href="#contact" class="nav-link"><span class="nav-number">04.</span> Contact</a></li>
+            <li><a href="#" class="btn btn-nav">Resume</a></li>
         </ul>
-        <div class="hamburger">
-            <i data-feather="menu"></i>
-        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </nav>
 
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <aside class="mobile-nav" id="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#about" class="mobile-link"><span class="nav-number">01.</span> About</a></li>
+            <li><a href="#skills" class="mobile-link"><span class="nav-number">02.</span> Skills</a></li>
+            <li><a href="#projects" class="mobile-link"><span class="nav-number">03.</span> Projects</a></li>
+            <li><a href="#contact" class="mobile-link"><span class="nav-number">04.</span> Contact</a></li>
+            <li><a href="#" class="btn btn-nav mobile-resume">Resume</a></li>
+        </ul>
+    </aside>
+
     <main>
-        <header class="hero">
-            <div class="hero-content fade-in-up">
-                <p class="hero-greeting">Hi, my name is</p>
-                <h1 class="hero-name">Nahida Kamal.</h1>
-                <h2 class="hero-subtitle">I build things for the web.</h2>
-                <p class="hero-desc">
+        <!-- Hero Section -->
+        <header class="hero" id="hero">
+            <div class="hero-content">
+                <p class="hero-greeting animate-item" data-delay="0">Hi, my name is</p>
+                <h1 class="hero-name animate-item" data-delay="1">Nahida Kamal.</h1>
+                <h2 class="hero-subtitle animate-item" data-delay="2">
+                    I <span class="typewriter-wrapper">
+                        <span id="typewriter" class="typewriter-text"></span>
+                        <span class="typewriter-cursor">|</span>
+                    </span>
+                </h2>
+                <p class="hero-desc animate-item" data-delay="3">
                     I'm a software engineer specializing in building (and occasionally designing) exceptional digital
-                    experiences. Currently, I'm focused on building accessible, human-centered products.
+                    experiences. Currently focused on building accessible, human-centered products.
                 </p>
-                <div class="cta-group">
-                    <a href="#projects" class="btn btn-primary">Check out my work!</a>
+                <div class="cta-group animate-item" data-delay="4">
+                    <a href="#projects" class="btn btn-primary btn-glow">
+                        <span>Check out my work!</span>
+                    </a>
                 </div>
             </div>
         </header>
 
+        <!-- About Section -->
         <section id="about" class="container scroll-reveal">
             <h3 class="section-title"><span class="section-number">01.</span> About Me</h3>
             <div class="about-content">
@@ -59,65 +109,128 @@
                     <p>Fast-forward to today, and I've had the privilege of working at an <a href="#">advertising
                             agency</a>, a <a href="#">start-up</a>, and a <a href="#">huge corporation</a>.</p>
                     <p>Here are a few technologies I've been working with recently:</p>
-                    <ul class="skills-list">
+                    <ul class="tech-list">
                         <li>JavaScript (ES6+)</li>
                         <li>TypeScript</li>
                         <li>React</li>
-                        <li>Eleventy</li>
+                        <li>Next.js</li>
                         <li>Node.js</li>
-                        <li>WordPress</li>
+                        <li>Python</li>
                     </ul>
                 </div>
                 <div class="about-img">
                     <div class="img-wrapper">
-                        <!-- Placeholder for profile image, ideally user would replace this -->
-                        <div class="img-placeholder">NK</div>
+                        <div class="img-placeholder">
+                            <span class="avatar-text">NK</span>
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-ring avatar-ring-2"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="container scroll-reveal">
-            <h3 class="section-title"><span class="section-number">02.</span> Where I've Worked</h3>
-            <!-- Reusing structure but presenting skills as 'Experience' esque or just detailed skills -->
+            <h3 class="section-title"><span class="section-number">02.</span> Skills & Expertise</h3>
             <div class="skills-grid">
-                <div class="skill-card glass-card">
-                    <div class="card-header">
+                <div class="skill-card glass-card" data-tilt>
+                    <div class="card-icon-wrapper">
                         <i data-feather="code" class="card-icon"></i>
-                        <h4>Languages</h4>
                     </div>
-                    <p>Python, Java, C++, JavaScript (ES6+), SQL, HTML5, CSS3</p>
-                </div>
-                <div class="skill-card glass-card">
-                    <div class="card-header">
-                        <i data-feather="layout" class="card-icon"></i>
-                        <h4>Frameworks & Libs</h4>
+                    <h4>Languages</h4>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Python</span><span>90%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>JavaScript</span><span>92%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Java / C++</span><span>75%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="75"></div>
+                            </div>
+                        </div>
                     </div>
-                    <p>React.js, Node.js, Express, Django, Flask, Bootstrap, Tailwind CSS</p>
                 </div>
-                <div class="skill-card glass-card">
-                    <div class="card-header">
+
+                <div class="skill-card glass-card" data-tilt>
+                    <div class="card-icon-wrapper">
+                        <i data-feather="layers" class="card-icon"></i>
+                    </div>
+                    <h4>Frameworks & Libs</h4>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>React / Next.js</span><span>88%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Node / Express</span><span>85%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Django / Flask</span><span>78%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="78"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-tilt>
+                    <div class="card-icon-wrapper">
                         <i data-feather="tool" class="card-icon"></i>
-                        <h4>Tools & Platforms</h4>
                     </div>
-                    <p>Git & GitHub, Docker, AWS (EC2, S3), Jenkins, Linux, Postman</p>
+                    <h4>Tools & Platforms</h4>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Git & GitHub</span><span>95%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Docker / AWS</span><span>72%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="72"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Linux / CI/CD</span><span>80%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="container scroll-reveal">
             <h3 class="section-title"><span class="section-number">03.</span> Some Things I've Built</h3>
             <div class="project-grid">
 
                 <!-- Project 1 -->
-                <div class="project-card glass-card">
+                <div class="project-card glass-card" data-tilt>
                     <div class="project-top">
                         <div class="folder-icon">
                             <i data-feather="folder"></i>
                         </div>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i data-feather="github"></i></a>
-                            <a href="#" target="_blank"><i data-feather="external-link"></i></a>
+                            <a href="#" target="_blank" aria-label="GitHub"><i data-feather="github"></i></a>
+                            <a href="#" target="_blank" aria-label="Live Demo"><i data-feather="external-link"></i></a>
                         </div>
                     </div>
                     <h4 class="project-title">Algorithm Visualizer</h4>
@@ -131,14 +244,14 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card glass-card">
+                <div class="project-card glass-card" data-tilt>
                     <div class="project-top">
                         <div class="folder-icon">
                             <i data-feather="folder"></i>
                         </div>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i data-feather="github"></i></a>
-                            <a href="#" target="_blank"><i data-feather="external-link"></i></a>
+                            <a href="#" target="_blank" aria-label="GitHub"><i data-feather="github"></i></a>
+                            <a href="#" target="_blank" aria-label="Live Demo"><i data-feather="external-link"></i></a>
                         </div>
                     </div>
                     <h4 class="project-title">E-Commerce API</h4>
@@ -153,14 +266,14 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card glass-card">
+                <div class="project-card glass-card" data-tilt>
                     <div class="project-top">
                         <div class="folder-icon">
                             <i data-feather="folder"></i>
                         </div>
                         <div class="project-links">
-                            <a href="#" target="_blank"><i data-feather="github"></i></a>
-                            <a href="#" target="_blank"><i data-feather="external-link"></i></a>
+                            <a href="#" target="_blank" aria-label="GitHub"><i data-feather="github"></i></a>
+                            <a href="#" target="_blank" aria-label="Live Demo"><i data-feather="external-link"></i></a>
                         </div>
                     </div>
                     <h4 class="project-title">Task Manager CLI</h4>
@@ -176,25 +289,22 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="container scroll-reveal text-center">
-            <p class="section-subtitle">What's Next?</p>
+            <p class="section-subtitle">04. What's Next?</p>
             <h3 class="section-title big-title">Get In Touch</h3>
             <p class="contact-desc">
                 I'm currently looking for new opportunities, and my inbox is always open. Whether you have a question or
                 just want to say hi, I'll try my best to get back to you!
             </p>
-            <a href="mailto:nahida.kamal@example.com" class="btn btn-primary big-btn">Say Hello</a>
+            <a href="mailto:nahida.kamal@example.com" class="btn btn-primary btn-glow big-btn">
+                <span>Say Hello</span>
+            </a>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="social-links">
-            <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
-            <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
-            <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
-        </div>
-        <p class="footer-credit">Designed & Built by Nahida Kamal</p>
+        <p class="footer-credit">Designed & Built by <a href="#">Nahida Kamal</a></p>
     </footer>
 
     <script src="script.js"></script>
